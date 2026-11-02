@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TutorAI – AI-Powered Home Tutor Finder</title>
+    <meta name="description" content="Find trusted home tutors nearby, get smart AI recommendations with TutorChat, compare profiles, and plan study schedules." />
+    <meta property="og:title" content="TutorAI – AI-Powered Home Tutor Finder" />
+    <meta property="og:description" content="Find trusted home tutors nearby, get smart AI recommendations with TutorChat, compare profiles, and plan study schedules." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23174C3C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 10v6M2 10l10-5 10 5-10 5z'/><path d='M6 12v5c3 3 9 3 12 0v-5'/></svg>" />
+    <!-- Leaflet CSS for OpenStreetMap -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script>
+      // Gracefully prevent unhandled rejections from Vite dev server HMR WebSocket in proxied sandbox
+      window.addEventListener('unhandledrejection', function(event) {
+        var reason = event && event.reason;
+        var msg = (reason && (reason.message || reason.stack || String(reason))) || '';
+        if (msg.includes('WebSocket') || msg.includes('failed to connect to websocket')) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      });
+      window.addEventListener('error', function(event) {
+        var msg = (event && (event.message || '')) || '';
+        if (msg.includes('WebSocket') || msg.includes('failed to connect to websocket')) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }, true);
+    </script>
+  </head>
+  <body class="bg-[#F8F6EF] text-[#242B27] font-sans antialiased selection:bg-[#174C3C] selection:text-[#F8F6EF]">
+    <!-- Netlify form detection hidden elements -->
+    <form name="tutor-enquiry" data-netlify="true" hidden>
+      <input type="text" name="parentName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="tutorName" />
+      <input type="text" name="studentClass" />
+      <input type="text" name="subject" />
+      <input type="text" name="locality" />
+      <input type="text" name="mode" />
+      <input type="text" name="schedulePreference" />
+      <textarea name="notes"></textarea>
+    </form>
+    <form name="tutor-application" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="qualification" />
+      <input type="text" name="subjects" />
+      <input type="number" name="experience" />
+      <input type="text" name="preferredAreas" />
+      <input type="number" name="feeExpectation" />
+      <input type="text" name="teachingMode" />
+      <textarea name="bio"></textarea>
+    </form>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

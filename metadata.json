@@ -1,0 +1,6 @@
+{
+  "name": "TutorAI – AI-Powered Home Tutor Finder",
+  "description": "Find trusted home tutors nearby, get smart AI recommendations with TutorChat, compare profiles, and plan study schedules.",
+  "requestFramePermissions": ["geolocation", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
